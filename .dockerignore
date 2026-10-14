@@ -1,0 +1,12 @@
+.git
+.github
+target
+docs/evidencias
+*.md
+.env
+.env.*
+!.env.example
+.idea
+*.iml
+.DS_Store
+agent-tools

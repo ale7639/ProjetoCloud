@@ -1,0 +1,63 @@
+name: CI Java
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Obter o código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      - name: Validação inicial
+        run: |
+          test -f pom.xml
+          test -f src/main/java/com/unialfa/biblioteca/BibliotecaApplication.java
+          test -d src/test/java
+
+      - name: Compilar, testar e verificar
+        run: ./mvnw -B clean verify
+
+      - name: Armazenar relatórios de teste
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-${{ github.sha }}
+          path: target/surefire-reports/
+          if-no-files-found: warn
+
+      - name: Armazenar pacote gerado
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacote-${{ github.sha }}
+          path: |
+            target/*.jar
+            !target/*-sources.jar
+            !target/*-javadoc.jar
+          if-no-files-found: error
+
+      - name: Construir imagem Docker
+        if: success()
+        run: |
+          IMAGE_TAG="biblioteca:${GITHUB_SHA}"
+          docker build -t "$IMAGE_TAG" .
+          echo "Imagem construída: $IMAGE_TAG"
+          docker images "$IMAGE_TAG"

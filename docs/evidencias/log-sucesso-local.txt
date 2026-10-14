@@ -1,0 +1,13 @@
+[INFO] Running com.unialfa.biblioteca.BibliotecaApplicationTests
+22:56:47.295 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.unialfa.biblioteca.BibliotecaApplicationTests]: BibliotecaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:56:47.353 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.unialfa.biblioteca.BibliotecaApplication for test class com.unialfa.biblioteca.BibliotecaApplicationTests
+22:56:47.402 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.unialfa.biblioteca.BibliotecaApplicationTests]: BibliotecaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:56:47.403 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.unialfa.biblioteca.BibliotecaApplication for test class com.unialfa.biblioteca.BibliotecaApplicationTests
+2026-10-14T22:56:47.597Z  INFO 5093 --- [biblioteca] [           main] c.u.b.BibliotecaApplicationTests         : Starting BibliotecaApplicationTests using Java 21.0.12.1 with PID 5093 (started by ubuntu in /workspace)
+2026-10-14T22:56:47.598Z  INFO 5093 --- [biblioteca] [           main] c.u.b.BibliotecaApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-10-14T22:56:49.834Z  INFO 5093 --- [biblioteca] [           main] c.u.b.BibliotecaApplicationTests         : Started BibliotecaApplicationTests in 2.396 seconds (process running for 3.091)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.167 s -- in com.unialfa.biblioteca.BibliotecaApplicationTests
+[INFO] Running com.unialfa.biblioteca.service.EmprestimoServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.unialfa.biblioteca.service.EmprestimoServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

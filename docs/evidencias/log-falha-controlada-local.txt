@@ -1,0 +1,6 @@
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! -- in com.unialfa.biblioteca.service.EmprestimoServiceTest
+[ERROR] com.unialfa.biblioteca.service.EmprestimoServiceTest.deveCalcularDevolucaoComPrazoPadrao -- Time elapsed: 0.035 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2026-10-08> but was: <2026-10-15>
+[ERROR]   EmprestimoServiceTest.deveCalcularDevolucaoComPrazoPadrao:28 expected: <2026-10-08> but was: <2026-10-15>
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
