@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Biblioteca (Spring Boot)",
+      "request": "launch",
+      "mainClass": "com.unialfa.biblioteca.BibliotecaApplication",
+      "projectName": "biblioteca",
+      "env": {
+        "SERVER_PORT": "38471",
+        "JWT_SECRET": "dev-secret-biblioteca-t5-ci-demo-32b"
+      },
+      "vmArgs": "-Dserver.port=38471"
+    }
+  ]
+}

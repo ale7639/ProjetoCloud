@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Maven: verify",
+      "type": "shell",
+      "command": "./mvnw -B clean verify",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Maven: package",
+      "type": "shell",
+      "command": "./mvnw -B -DskipTests package",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Rodar Biblioteca (porta 38471)",
+      "type": "shell",
+      "command": "export SERVER_PORT=38471 JWT_SECRET=dev-secret-biblioteca-t5-ci-demo-32b; ./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=38471",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "spring",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*Started BibliotecaApplication.*"
+        }
+      }
+    }
+  ]
+}
